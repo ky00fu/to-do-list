@@ -5,6 +5,7 @@
     --bgcolor: rgb(24, 24, 36);
     --divbgcolor: rgb(36, 39, 60);
     --containertxt: rgb(117, 119, 140);
+    --statustxtactive: rgb(79, 119, 214);
 }
 
 * {
@@ -64,20 +65,36 @@ main {
     border-radius: 1vw;
     position: relative;
     top: -8vw;
-    margin: 2vw;
-    padding: 1.5vw;
+    margin: .7vw;
     background-color: var(--divbgcolor);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.container p {
+.container p,
+.container input[type="text"],
+.container input[type="text"]::placeholder {
     margin-left: 1vw;
     color: var(--containertxt);
 }
 
+.container input[type="text"] {
+    background-color: transparent;
+    border: none;
+    font-size: 1rem;
+    width: 40vw;
+}
+
+.container input[type="text"]:focus {
+    outline: none;
+}
+
 /* checkboxes */
 .create,
-.todo-content {
+.todo-content,
+.list-footer {
     display: flex;
+    padding: 1.5vw;
+    align-items: center;
 }
 
 /* Hide the default checkbox */
@@ -85,10 +102,11 @@ input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    
     width: 16px;
     height: 16px;
     border: 2px solid #555;
-    border-radius: 4px;
+    border-radius: 50vw;
     outline: none;
     cursor: pointer;
 }
@@ -96,6 +114,9 @@ input[type="checkbox"] {
 /* Style the checkbox when checked */
 input[type="checkbox"]:checked {
     background-color: #2196F3; /* Change background color when checked */
+    background-image: url(assets/icons/check.png);
+    background-repeat: no-repeat;
+    background-size: 1vw;
     border-color: #2196F3; /* Change border color when checked */
 }
 
@@ -103,4 +124,36 @@ input[type="checkbox"]:checked {
 input[type="checkbox"] + label {
     margin-left: 8px; /* Add spacing between the checkbox and the label */
     cursor: pointer;
+}
+
+.todo-content {
+    border-bottom: 1px solid var(--containertxt);
+}
+
+.list-footer {
+    justify-content: space-between;
+}
+
+.list-footer,
+.list-footer button {
+    font-size: .8rem;
+    color: var(--containertxt);
+}
+
+.list-footer button {
+    border: none;
+    background-color: transparent;
+}
+
+.status button {
+    font-weight: 600;
+    margin: 0 .5vw;
+}
+
+.status button:hover,
+.status button:active,
+.list-footer button:hover,
+.list-footer button:active  {
+    color: var(--statustxtactive);
+    transition: color ease .7s;
 }
