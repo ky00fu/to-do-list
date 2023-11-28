@@ -97,7 +97,7 @@ main {
     align-items: center;
 }
 
-/* Hide the default checkbox */
+/* checkbox style */
 input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
@@ -111,18 +111,17 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-/* Style the checkbox when checked */
 input[type="checkbox"]:checked {
-    background-color: #2196F3; /* Change background color when checked */
-    background-image: url(assets/icons/check.png);
+    background-color: #2196F3;
+    background-image: url(../assets/icons/check.png);
     background-repeat: no-repeat;
-    background-size: 1vw;
+    background-size: .5vw;
+    background-position: center;
     border-color: #2196F3; /* Change border color when checked */
 }
 
-/* Style the label for the checkbox */
 input[type="checkbox"] + label {
-    margin-left: 8px; /* Add spacing between the checkbox and the label */
+    margin-left: 8px;
     cursor: pointer;
 }
 
