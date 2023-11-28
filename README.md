@@ -11,4 +11,5 @@
 - [Check Icon](https://www.flaticon.com/br/icone-gratis/brilho-do-sol_5311069?term=sol&page=1&position=1&origin=search&related_id=5311069)
 
 ### Imagens
-- [Wallpaper Login](https://www.pexels.com/photo/photo-of-abstract-painting-3527795/)
+- [Login Wallpaper by Pixabay](https://www.pexels.com/photo/purple-flower-aster-65873/)
+- [Home Wallpaper by Dids](https://www.pexels.com/photo/photo-of-abstract-painting-3527795/)
