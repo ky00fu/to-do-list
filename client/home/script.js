@@ -1,86 +1,66 @@
-const uri = 'http://localhost:3000/todo'
+const url = "http://localhost:3000";
 
-const addToDo = document.querySelector("#addToDo")
-const toDoList = document.querySelector("#toDoList")
-const completedList = document.querySelector("#completedList")
+const acesso = document.querySelector("#redirect");
+const msgDiv = document.querySelector(".erro");
+const mensagem = document.querySelector("#msgErro");
 
-fetch(uri + '/listar', { method: 'GET' })
-    .then(resp => resp.json())
-    .then(resp => list(resp))
-    .catch(err => console.error(err))
+acesso.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-addToDo.addEventListener('submit', e => {
-    e.preventDefault()
+  const dados = {
+    email: acesso.email.value,
+    senha: acesso.senha.value,
+  };
 
-    const content = {
-        description: addToDo.description.value,
-    }
+  const options = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(dados),
+  };
 
-    const options = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(content),
-    }
+  fetch(url + "/usuario", options)
+    .then((resp) => {
+      if (resp.status !== 202) {
+        msgDiv.offsetWidth;
+        msgDiv.classList.remove("show");
 
-    fetch(uri + '/criar', options)
-        .then(resp => resp.status)
-        .then(resp => {
-            if (resp == 201) window.location.reload()
-            else alert('404')
-        })
-})
+        mensagem.innerHTML = "E-mail ou senha incorreta";
 
-function list(arr) {
-    arr.forEach(e => {
-        const line = document.createElement('tr')
-        const pDescription = document.createElement('td')
-        const timestamp = document.createElement('td')
-        const checkbox = document.createElement('td')
-
-        pDescription.innerHTML = e.description
-        timestamp.innerHTML = formatDate(e.date)
-
-        const done = document.createElement('input')
-        done.type = "checkbox"
-        done.setAttribute('onclick', `alterarStatus('${e.id}')`)
-
-        checkbox.appendChild(done)
-
-        line.appendChild(pDescription).style.wordBreak = "break-all"
-        line.appendChild(timestamp)
-
-        line.appendChild(checkbox)
-
-        toDoList.appendChild(line)
-
-        done.addEventListener('click', (e) => {
-            e.target.parentNode.parentNode.remove()
-        })
-
-        if (e.status == "Done") {
-            line.remove()
-            done.remove()
-
-            completedList.appendChild(line.cloneNode(true))
-
-            completedList.style.setProperty("text-decoration", "line-through")
-        }
+        msgDiv.offsetWidth;
+        msgDiv.classList.add("show");
+      } else {
+        return resp.json();
+      }
     })
-}
+    .then((resp) => {
+      let inpEmail = document.getElementById("email");
+      let inpSenha = document.getElementById("senha");
 
-function formatDate(date) {
-    return new Intl.DateTimeFormat('pt-BR', {
-        dateStyle: "short",
-        timeStyle: "short"
+      if (inpEmail.value === "" || inpSenha.value === "") {
+        msgDiv.offsetWidth;
+        msgDiv.classList.remove("show");
 
-    }).format(new Date(date)).replace(",","");
-}
+        mensagem.innerHTML = "Preencha os campos abaixo";
 
-function alterarStatus(i) {
-    fetch(uri + '/alterar/' + i, { method: 'PUT' })
-        .then(resp => resp.status)
-        .then(resp => {
-            if (resp == 201) window.location.reload()
-            else alert('404')
-        })
+        msgDiv.offsetWidth;
+        msgDiv.classList.add("show");
+      } else if (inpEmail.value && inpSenha.value) {
+        if (resp.length > 0) {
+          window.localStorage.setItem("dados", JSON.stringify(resp[0]));
+          window.location.href = `../home/index.html`;
+        } else {
+          msgDiv.offsetWidth;
+          msgDiv.classList.remove("show");
+
+          mensagem.textContent = "Usuário não encontrado";
+
+          msgDiv.offsetWidth;
+          msgDiv.classList.add("show");
+        }
+      }
+    });
+});
+
+function redirectHome() {
+  window.location.href = `../../Entrada/index.html`;
 }
