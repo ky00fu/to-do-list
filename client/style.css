@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap');
+
+:root {
+    --font: 'Poppins', sans-serif;
+    --bgcolor: rgb(24, 24, 36);
+    --divbgcolor: rgb(36, 39, 60);
+    --containertxt: rgb(117, 119, 140);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+body {
+    background-color: var(--bgcolor);
+}
+
+header {
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    background-color: #492957;
+    color: white;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    top: -2vw;
+
+    width: 44vw;
+    font-weight: 600;
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 1rem;
+}
+
+#toggle {
+    width: 3vw;
+    height: 3vw;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    width: 44vw;
+    border-radius: 1vw;
+    position: relative;
+    top: -8vw;
+    margin: 2vw;
+    padding: 1.5vw;
+    background-color: var(--divbgcolor);
+}
+
+.container p {
+    margin-left: 1vw;
+    color: var(--containertxt);
+}
+
+/* checkboxes */
+.create,
+.todo-content {
+    display: flex;
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #555;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Style the checkbox when checked */
+input[type="checkbox"]:checked {
+    background-color: #2196F3; /* Change background color when checked */
+    border-color: #2196F3; /* Change border color when checked */
+}
+
+/* Style the label for the checkbox */
+input[type="checkbox"] + label {
+    margin-left: 8px; /* Add spacing between the checkbox and the label */
+    cursor: pointer;
+}
