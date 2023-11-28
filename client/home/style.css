@@ -29,8 +29,8 @@ header {
     height: 40vh;
     display: flex;
     justify-content: center;
-    background-color: #492957;
     color: white;
+    background: url(../assets/wallpapers/wallpaper-by-dids.jpg);
 }
 
 header div {
