@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
 :root {
+  --font: 'Poppins', sans-serif;
   --white: #fff;
   --black: rgb(24, 24, 36);
-  --wrapperbg: rgba(24, 24, 36, .5);
-  --button: rgb(36, 39, 60);
+  /* --divbgcolor: rgb(36, 39, 60); */
+  --divbgcolor: rgba(36, 39, 60, .7);
+  --containertxt: rgb(117, 119, 140);
+  --statustxtactive: rgb(79, 119, 214);
 }
 
 * {
@@ -19,7 +22,8 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: url("../assets/wallpapers/wallpaper-by-pixabay.jpg") no-repeat;
+  /* background: url("../assets/wallpapers/wallpaper-by-pixabay.jpg") no-repeat; */
+  background: url("../assets/wallpapers/wallpaper-by-dids.jpg") no-repeat;
   background-size: cover;
   background-position: center;
 }
@@ -100,11 +104,12 @@ p {
   position: relative;
   width: 400px;
   height: 440px;
-  background: transparent;
+  /* background: transparent; */
+  background: var(--divbgcolor);
   border: 2px solid rgba(49, 49, 49, 0.298);
   border-radius: 20px;
   backdrop-filter: blur(20px);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 
   display: flex;
   justify-content: center;
@@ -203,8 +208,9 @@ a:focus {
 .btn {
   width: 100%;
   height: 45px;
-  /* background: var(--black); */
-  background: var(--button);
+  /* background: var(--statustxtactive); */
+  background: var(--black);
+  
   border: none;
   outline: none;
   border-radius: 6px;
