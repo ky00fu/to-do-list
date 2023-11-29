@@ -69,6 +69,11 @@ function listarToDo(arr) {
       descriptionP.style.setProperty("text-decoration", "line-through");
     }
 
+    content.addEventListener("click", () => {
+      checkbox.checked = !checkbox.checked;
+      alterarStatus(e.id);
+    });
+
     content.appendChild(checkbox);
     content.appendChild(descriptionP);
 
