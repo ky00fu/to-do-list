@@ -1,8 +1,14 @@
 @import url(style.css);
 
 @media (max-width: 475px) {
-  header div img {
-    display: none;
+  header div {
+    justify-content: space-evenly;
+    gap: 30vw;
+  }
+
+  #returnbtn {
+    width: 10vw;
+    height: 10vw;
   }
 
   #addToDo,
