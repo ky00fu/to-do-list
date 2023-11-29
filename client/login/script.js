@@ -1,4 +1,4 @@
-const url = "http://localhost:3000";
+const url = "http://localhost:3000/";
 
 const wrapper = document.querySelector('.wrapper')
 const loginLink = document.querySelector('.login-link')
@@ -13,7 +13,7 @@ loginLink.addEventListener('click', () => {
     wrapper.classList.remove('active')
 })
 
-const acesso = document.querySelector(".acesso");
+const acesso = document.querySelector(".loginform");
 const msgDiv = document.querySelector(".erro");
 const mensagem = document.querySelector("#msgErro");
 
@@ -31,7 +31,7 @@ acesso.addEventListener("submit", function (e) {
     body: JSON.stringify(dados),
   };
 
-  fetch(url + "/usuario", options)
+  fetch(url + "usuario", options)
     .then((resp) => {
       if (resp.status !== 202) {
         msgDiv.offsetWidth;
@@ -46,6 +46,8 @@ acesso.addEventListener("submit", function (e) {
       }
     })
     .then((resp) => {
+      console.log('Response:', resp); // Log the response for debugging
+
       let inpEmail = document.getElementById("email");
       let inpSenha = document.getElementById("senha");
 
@@ -57,6 +59,9 @@ acesso.addEventListener("submit", function (e) {
 
         msgDiv.offsetWidth;
         msgDiv.classList.add("show");
+
+        console.log(inpEmail)
+        console.log(inpSenha)
       } else if (inpEmail.value && inpSenha.value) {
         if (resp.length > 0) {
           window.localStorage.setItem("dados", JSON.stringify(resp[0]));
@@ -73,7 +78,3 @@ acesso.addEventListener("submit", function (e) {
       }
     });
 });
-
-function redirectHome() {
-  window.location.href = `../../Entrada/index.html`;
-}

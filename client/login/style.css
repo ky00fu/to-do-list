@@ -115,15 +115,16 @@ p {
 }
 
 .erro {
-  /* margin-top: 10%; */
-  height: 10%;
-  font-size: 1.875rem;
+  font-size: 1rem;
+  text-align: center;
   color: var(--white);
   opacity: 0;
 }
 
 .erro.show {
   animation: fade 0.5s linear forwards;
+  padding: 5%;
+  transition: padding .5s ease linear;
 }
 
 @keyframes fade {

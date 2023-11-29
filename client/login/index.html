@@ -19,14 +19,16 @@
         <div class="form-box login">
             <h2>Login</h2>
 
-            <div class="erro">hello world</div>
+            <div class="erro">
+                <p id="msgErro">ERRO</p>
+            </div>
 
-            <form id="redirect" novalidate>
+            <form class="loginform" id="redirect" novalidate>
                 <div class="input-box">
                     <span class="icon">
                         <ion-icon name="mail"></ion-icon>
                     </span>
-                    <input type="email" id="email" required>
+                    <input type="email" name="email" id="email" value="joao.silva@gmail.com" required>
                     <label>E-mail</label>
                 </div>
 
@@ -34,7 +36,7 @@
                     <span class="icon">
                         <ion-icon name="lock-closed"></ion-icon>
                     </span>
-                    <input type="password" id="senha" required>
+                    <input type="password" name="senha" id="senha" value="senha123" required>
                     <label>Senha</label>
                 </div>
                 
@@ -59,14 +61,6 @@
                     <input type="text" required>
                     <label>Nome Completo</label>
                 </div>
-
-                <!-- <div class="input-box">
-                    <span class="icon">
-                        <ion-icon name="call"></ion-icon>
-                    </span>
-                    <input type="text" required>
-                    <label>Telefone</label>
-                </div> -->
 
                 <div class="input-box">
                     <span class="icon">
