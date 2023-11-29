@@ -126,16 +126,13 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked,
-input[type="checkbox"]:hover {
+input[type="checkbox"]:checked {
     background-color: #2196F3;
     background-image: url(../assets/icons/check.png);
     background-repeat: no-repeat;
     background-size: .5vw;
     background-position: center;
     border-color: #2196F3;
-
-    transition: background-color ease .5s;
 }
 
 input[type="checkbox"] + label {
@@ -145,6 +142,7 @@ input[type="checkbox"] + label {
 
 .todo-content {
     border-bottom: 1px solid var(--containertxt);
+    cursor: pointer;
 }
 
 .todo-content:hover {
