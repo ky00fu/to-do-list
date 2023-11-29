@@ -32,7 +32,7 @@ class ToDo {
 
     delete() {
         if (this.id == undefined)
-            return `DELETE FROM tarefa`
+            return `DELETE FROM tarefa WHERE status = 0`
         else
             return `DELETE FROM tarefa WHERE id = '${this.id}'`
     }
