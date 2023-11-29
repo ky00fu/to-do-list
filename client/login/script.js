@@ -1,18 +1,5 @@
 const url = "http://localhost:3000/";
 
-const wrapper = document.querySelector('.wrapper')
-const loginLink = document.querySelector('.login-link')
-const cadastroLink = document.querySelector('.cadastrar-link')
-
-// toggling login and register card
-cadastroLink.addEventListener('click', () => {
-    wrapper.classList.add('active')
-})
-
-loginLink.addEventListener('click', () => {
-    wrapper.classList.remove('active')
-})
-
 const acesso = document.querySelector(".loginform");
 const msgDiv = document.querySelector(".erro");
 const mensagem = document.querySelector("#msgErro");

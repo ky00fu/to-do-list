@@ -100,8 +100,7 @@ p {
   position: relative;
   width: 400px;
   height: 440px;
-  /* background: transparent; */
-  background: var(--wrapperbg);
+  background: transparent;
   border: 2px solid rgba(49, 49, 49, 0.298);
   border-radius: 20px;
   backdrop-filter: blur(20px);
@@ -144,12 +143,6 @@ p {
 .wrapper .form-box.login {
   transition: transform 0.18s ease;
   transform: translateX(0);
-}
-
-.wrapper .form-box.cadastrar {
-  position: absolute;
-  transition: none;
-  transform: translateX(400px);
 }
 
 .form-box h2 {
@@ -226,24 +219,6 @@ a:focus {
   transition: background ease .5s;
 }
 
-.login-cadastrar {
-  font-size: 0.9em;
-  color: var(--white);
-  text-align: center;
-  font-weight: 500;
-  margin: 25px 0 10px;
-}
-
-.login-cadastrar p a {
-  color: var(--white);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.login-cadastrar p a:hover {
-  text-decoration: underline;
-}
-
 .wrapper .icon-close {
   position: absolute;
   top: 0;
@@ -267,11 +242,6 @@ a:focus {
 .wrapper.active .form-box.login {
   transition: none;
   transform: translateX(-400px);
-}
-
-.wrapper.active .form-box.cadastrar {
-  transition: transform 0.18s ease;
-  transform: translateX(0);
 }
 
 .wrapper.active-popup {
