@@ -46,7 +46,7 @@ git clone
 
 ![](md-assets/copiar-script.gif)
 
-- No phpMyAdmin, Clica em **SQL**
+- No phpMyAdmin, clica em **SQL**
 - Cola o script no campo em branco
 - Aperta `CTRL + ENTER`
 
