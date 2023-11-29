@@ -33,8 +33,6 @@ acesso.addEventListener("submit", function (e) {
       }
     })
     .then((resp) => {
-      console.log('Response:', resp); // Log the response for debugging
-
       let inpEmail = document.getElementById("email");
       let inpSenha = document.getElementById("senha");
 
