@@ -104,7 +104,6 @@ p {
   position: relative;
   width: 400px;
   height: 440px;
-  /* background: transparent; */
   background: var(--divbgcolor);
   border: 2px solid rgba(49, 49, 49, 0.298);
   border-radius: 20px;
