@@ -1,66 +1,89 @@
-const url = "http://localhost:3000";
+const uri = "http://localhost:3000/todo"
 
-const acesso = document.querySelector("#redirect");
-const msgDiv = document.querySelector(".erro");
-const mensagem = document.querySelector("#msgErro");
+const dado = JSON.parse(window.localStorage.getItem("dados")) || null
 
-acesso.addEventListener("submit", function (e) {
-  e.preventDefault();
+const nomeUsuario = document.querySelector("#nomeUsuario")
 
-  const dados = {
-    email: acesso.email.value,
-    senha: acesso.senha.value,
-  };
+if (dado !== null) {
+  nomeUsuario.innerHTML = dado.nome
+  nomeUsuario.style.setProperty("letter-spacing", ".3rem")
+} else {
+  alert("Usuário não encontrado")
+}
+
+const addToDo = document.querySelector("#addToDo")
+
+fetch(uri + "/user/" + dado.id, { method: "GET" })
+  .then((resp) => resp.json(dado.id))
+  .then((resp) => listarToDo(resp))
+  .catch((err) => console.error(err))
+
+addToDo.addEventListener("submit", (e) => {
+  e.preventDefault()
+
+  const content = {
+    usuarioid: dado.id,
+    description: addToDo.description.value,
+  }
 
   const options = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(dados),
-  };
+    body: JSON.stringify(content),
+  }
 
-  fetch(url + "/usuario", options)
+  fetch(uri, options)
+    .then((resp) => resp.status)
     .then((resp) => {
-      if (resp.status !== 202) {
-        msgDiv.offsetWidth;
-        msgDiv.classList.remove("show");
-
-        mensagem.innerHTML = "E-mail ou senha incorreta";
-
-        msgDiv.offsetWidth;
-        msgDiv.classList.add("show");
-      } else {
-        return resp.json();
-      }
+      if (resp == 201) window.location.reload()
+      else alert("404")
     })
-    .then((resp) => {
-      let inpEmail = document.getElementById("email");
-      let inpSenha = document.getElementById("senha");
+    .catch((err) => console.error(err))
+})
 
-      if (inpEmail.value === "" || inpSenha.value === "") {
-        msgDiv.offsetWidth;
-        msgDiv.classList.remove("show");
+function listarToDo(arr) {
+  const divList = document.querySelector(".list")
+  const divListFooter = document.querySelector(".list-footer")
+  const counter = document.querySelector("#counter")
 
-        mensagem.innerHTML = "Preencha os campos abaixo";
+  divList.innerHTML = ""
 
-        msgDiv.offsetWidth;
-        msgDiv.classList.add("show");
-      } else if (inpEmail.value && inpSenha.value) {
-        if (resp.length > 0) {
-          window.localStorage.setItem("dados", JSON.stringify(resp[0]));
-          window.location.href = `../home/index.html`;
-        } else {
-          msgDiv.offsetWidth;
-          msgDiv.classList.remove("show");
+  const itemsWithStatus1 = arr.filter((e) => e.status === 1);
+  const itemsWithStatus0 = arr.filter((e) => e.status === 0);
 
-          mensagem.textContent = "Usuário não encontrado";
+  arr.forEach((e) => {
+    const content = document.createElement("div")
+    content.classList.add("todo-content")
 
-          msgDiv.offsetWidth;
-          msgDiv.classList.add("show");
-        }
-      }
-    });
-});
+    const checkbox = document.createElement("input")
+    checkbox.type = "checkbox"
+    checkbox.id = "todo-checkbox"
+    checkbox.setAttribute("onclick", `alterarStatus('${e.id}')`)
 
-function redirectHome() {
-  window.location.href = `../../Entrada/index.html`;
+    const descriptionP = document.createElement("p")
+    descriptionP.id = "todo-p"
+    descriptionP.textContent = e.description
+
+    if (e.status == 0) {
+      checkbox.checked = true
+      descriptionP.style.setProperty("text-decoration", "line-through")
+    }
+
+    content.appendChild(checkbox)
+    content.appendChild(descriptionP)
+
+    divList.appendChild(content)
+  })
+
+  counter.innerHTML = `${itemsWithStatus1.length} items left`;
+
+  divList.appendChild(divListFooter)
+}
+
+function alterarStatus(i) {
+  fetch(uri + "/" + i, { method: "PUT" }).then((resp) => resp.status)
+  .then((resp) => {
+    if (resp == 201) window.location.reload()
+    else alert("404")
+  })
 }

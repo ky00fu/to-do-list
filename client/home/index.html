@@ -9,8 +9,8 @@
 <body>
     <header>
         <div>
-            <p>TODO</p>
-            <img src="../assets/icons/toggle-mode.png" alt="toggle dark and light mode" id="toggle">
+            <p id="nomeUsuario">TODO</p>
+            <img src="../assets/icons/check.png" alt="checkmark">
         </div>
     </header>
 
@@ -18,8 +18,10 @@
         <section>
             <div class="container">
                 <div class="create">
-                    <input type="checkbox" name="" id="">
-                    <input type="text" name="descricao" id="descricao" placeholder="Create a new todo...">
+                    <form id="addToDo">
+                        <button type="submit"></button>
+                        <input type="text" name="description" id="description" placeholder="Create a new todo...">
+                    </form>
                 </div>
             </div>
         </section>
@@ -28,17 +30,17 @@
             <div class="container">
                 <div class="list">
                     <div class="todo-content">
-                        <input type="checkbox" name="" id="">
-                        <p>Terminar projeto</p>
+                        <input type="checkbox" id="todo-checkbox">
+                        <p id="todo-p">Description</p>
                     </div>
 
                     <div class="list-footer">
-                        <p>0 items left</p>
+                        <p id="counter"></p>
 
                         <div class="status">
-                            <button>All</button>
-                            <button>Active</button>
-                            <button>Completed</button>
+                            <button onclick="showall()">All</button>
+                            <button onclick="showactive()">Active</button>
+                            <button onclick="showcompleted()">Completed</button>
                         </div>
 
                         <button>Clear Completed</button>
@@ -50,4 +52,7 @@
     
     <footer></footer>    
 </body>
+
+<script src="script.js"></script>
+
 </html>

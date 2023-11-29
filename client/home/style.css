@@ -23,6 +23,7 @@ html {
 
 body {
     background-color: var(--bgcolor);
+    overflow: hidden;
 }
 
 header {
@@ -48,7 +49,8 @@ header div {
     letter-spacing: 1rem;
 }
 
-#toggle {
+/* checkmark next to name */
+header div img {
     width: 3vw;
     height: 3vw;
 }
@@ -61,6 +63,7 @@ main {
 }
 
 .container {
+    overflow: hidden;
     width: 44vw;
     border-radius: 1vw;
     position: relative;
@@ -88,8 +91,20 @@ main {
     outline: none;
 }
 
+#addToDo button {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #555;
+    border-radius: 50vw;
+    background-color: var(--divbgcolor);
+}
+
+#addToDo button:focus {
+    outline: none;
+}
+
 /* checkboxes */
-.create,
+#addToDo,
 .todo-content,
 .list-footer {
     display: flex;
@@ -111,13 +126,16 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-input[type="checkbox"]:checked {
+input[type="checkbox"]:checked,
+input[type="checkbox"]:hover {
     background-color: #2196F3;
     background-image: url(../assets/icons/check.png);
     background-repeat: no-repeat;
     background-size: .5vw;
     background-position: center;
-    border-color: #2196F3; /* Change border color when checked */
+    border-color: #2196F3;
+
+    transition: background-color ease .5s;
 }
 
 input[type="checkbox"] + label {
@@ -127,6 +145,11 @@ input[type="checkbox"] + label {
 
 .todo-content {
     border-bottom: 1px solid var(--containertxt);
+}
+
+.todo-content:hover {
+    background-color: var(--bgcolor);
+    transition: background-color ease 1s;
 }
 
 .list-footer {
@@ -142,11 +165,13 @@ input[type="checkbox"] + label {
 .list-footer button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
 }
 
 .status button {
     font-weight: 600;
     margin: 0 .5vw;
+    cursor: pointer;
 }
 
 .status button:hover,
