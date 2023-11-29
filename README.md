@@ -3,12 +3,12 @@
 ## Instruções
 
 Necessário ter instalado:
-- [VSCode]()
+- [VSCode](https://code.visualstudio.com/download)
 - [Node.js](https://nodejs.org/en/download)
 - [XAMPP Control Panel](https://www.apachefriends.org/download.html)
 - Extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VSCode
 
-> Hiperlinks redirecionam para as páginas de download respectivas
+> Hiperlinks redirecionam para as páginas de download
 
 ### Clonar Repositório
 
