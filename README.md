@@ -36,9 +36,6 @@ git clone
 ### Inicializar o projeto
 - Abre o **XAMPP Control Panel**
 - Clica em **Start** no Apache e MySQL
-
-![](md-assets/xampp-start.gif)
-
 - Clica em **Admin** no MySQL
 
 ![](md-assets/xampp-start.gif)
