@@ -12,16 +12,13 @@ Necessário ter instalado:
 
 ### Clonar Repositório
 
-- Clica em 
+- Copia o link do repositório
 
-![](md-assets/figura-1.PNG)
+![](md-assets/git-clone.gif)
 
-![](md-assets/figura-2.PNG)
 
 - Clica no botão ao lado do link pra copiá-lo
-
-No VSCode:
-- Aperta as teclas `CTRL + SHIFT + P`
+- No VSCode, aperta as teclas `CTRL + SHIFT + P`
 - Digita
 
 ```
@@ -29,49 +26,54 @@ git clone
 ```
 
 - Seleciona `Git: Clone`
-- Copia e cola o link do repositório
-- Aperta `Enter` 
+- Cola o link do repositório
+- `Enter`
+
+![](md-assets/vscode-git-clone.gif)
+
 - Escolha um local para clonar o repositório
 
 ### Inicializar o projeto
 - Abre o **XAMPP Control Panel**
 - Clica em **Start** no Apache e MySQL
 
-![](md-assets/figura-3.PNG)
+![](md-assets/xampp-start.gif)
 
 - Clica em **Admin** no MySQL
 
-![](md-assets/figura-4.PNG)
+![](md-assets/xampp-start.gif)
 
-No phpMyAdmin
-- Clica em **SQL**
+- No VSCode, abra a pasta **./server/sql**
+- Abra o arquivo **script.sql**
+- Copia o script
 
-![](md-assets/figura-5.PNG)
+![](md-assets/copiar-script.gif)
 
-No VSCode
-- Na pasta **./server/sql** terá o arquivo **script.sql**
-- Abra o arquivo, copia o script
-- Volta para o phpMyAdmin e cola no campo em branco
+- No phpMyAdmin, Clica em **SQL**
+- Cola o script no campo em branco
 - Aperta `CTRL + ENTER`
 
-No VSCode
-- Clica com o botão direito na pasta **server**
+![](md-assets/colar-script.gif)
+
+- No VSCode, clica com o botão direito na pasta **server**
 - Clica em **Open in Integrated Terminal**
 
+![](md-assets/open-terminal.gif)
+
 Quando o Terminal abrir
-- Pra instalar as dependências, digite
+- Para instalar as dependências do projeto, digite
 
 ```
 npm i
 ```
 
-- Pra instalar o nodemon, digite
+- Para instalar o nodemon, digite
 
 ```
 npm i nodemon
 ```
 
-- Depois disso, digite
+- Para rodar o Backend, digite 
 
 ```
 nodemon
@@ -84,17 +86,13 @@ Para ver o projeto em funcionamento
 - Clica com o botão direito no arquivo **index.html**
 - **Open with Live Server**
 
+![](md-assets/open-live-server.gif)
+
 
 #
 
-## Bibliografia
+## Créditos
 
-#### Inspiração
 - [Todo App Frontend Mentor Challenge](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
-
-#### Ícones
-- [Favicon](https://www.flaticon.com/br/icone-gratis/verificacao-da-lista-da-area-de-transferencia_8270234?term=check&page=1&position=1&origin=search&related_id=8270234)
-- [Return Icon](https://www.flaticon.com/br/icone-gratis/brilho-do-sol_5311069?term=sol&page=1&position=1&origin=search&related_id=5311069)
-
-#### Imagens
+- [Ícones](https://www.flaticon.com/br/)
 - [Home Wallpaper by Dids](https://www.pexels.com/photo/photo-of-abstract-painting-3527795/)
