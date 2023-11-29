@@ -22,20 +22,70 @@ Necessário ter instalado:
 
 No VSCode:
 - Aperta as teclas `CTRL + SHIFT + P`
-- Digita `git clone`
+- Digita
+
+```
+git clone
+```
+
 - Seleciona `Git: Clone`
 - Copia e cola o link do repositório
 - Aperta `Enter` 
 - Escolha um local para clonar o repositório
 
-### Ativar o Backend
+### Inicializar o projeto
+- Abre o **XAMPP Control Panel**
+- Clica em **Start** no Apache e MySQL
+
+![](md-assets/figura-3.PNG)
+
+- Clica em **Admin** no MySQL
+
+![](md-assets/figura-4.PNG)
+
+No phpMyAdmin
+- Clica em **SQL**
+
+![](md-assets/figura-5.PNG)
+
+No VSCode
+- Na pasta **./server/sql** terá o arquivo **script.sql**
+- Abra o arquivo, copia o script
+- Volta para o phpMyAdmin e cola no campo em branco
+- Aperta `CTRL + ENTER`
+
+No VSCode
 - Clica com o botão direito na pasta **server**
 - Clica em **Open in Integrated Terminal**
 
 Quando o Terminal abrir
-- Digite
-    
-    npm i
+- Pra instalar as dependências, digite
+
+```
+npm i
+```
+
+- Pra instalar o nodemon, digite
+
+```
+npm i nodemon
+```
+
+- Depois disso, digite
+
+```
+nodemon
+```
+
+## Abrir o projeto
+
+Para ver o projeto em funcionamento
+- Abra a pasta **./client/login**
+- Clica com o botão direito no arquivo **index.html**
+- **Open with Live Server**
+
+
+#
 
 ## Bibliografia
 
