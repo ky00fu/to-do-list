@@ -48,6 +48,13 @@
     display: none;
   }
 
+  #clearbtnresp {
+    display: block;
+    margin: 0 5vw;
+    width: 4vw;
+    height: 4vw;
+  }
+
   .list-footer,
   .status {
     display: flex;

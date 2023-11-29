@@ -53,6 +53,13 @@ header div {
 header div img {
     width: 3vw;
     height: 3vw;
+    margin-right: 3vw;
+    cursor: pointer;
+}
+
+header div img:hover {
+    scale: 110%;
+    transition: scale ease .5s;
 }
 
 main {
@@ -178,4 +185,8 @@ input[type="checkbox"] + label {
 .list-footer button:active  {
     color: var(--statustxtactive);
     transition: color ease .7s;
+}
+
+#clearbtnresp {
+    display: none;
 }

@@ -1,5 +1,12 @@
 const uri = "http://localhost:3000/todo";
 
+document.getElementById("returnbtn").addEventListener('click', (e) => {
+  e.preventDefault()
+
+  window.location.href = `../login/index.html`;
+  window.localStorage.removeItem("dados");
+})
+
 const dado = JSON.parse(window.localStorage.getItem("dados")) || null;
 
 const nomeUsuario = document.querySelector("#nomeUsuario");
@@ -114,6 +121,14 @@ function listarToDo(arr) {
   }
 
   document.getElementById("clear").addEventListener("click", (e) => {
+    e.preventDefault();
+
+    fetch(uri + "/", { method: "DELETE" })
+      .then((resp) => resp.status)
+      .then((resp) => window.location.reload());
+  });
+
+  document.getElementById("clearbtnresp").addEventListener("click", (e) => {
     e.preventDefault();
 
     fetch(uri + "/", { method: "DELETE" })
