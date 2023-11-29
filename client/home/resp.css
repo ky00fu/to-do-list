@@ -1,0 +1,61 @@
+@import url(style.css);
+
+@media (max-width: 475px) {
+  header div img {
+    display: none;
+  }
+
+  #addToDo,
+  .todo-content,
+  .list-footer {
+    padding: 4vw;
+  }
+
+  .container,
+  .todo-content,
+  .list-footer {
+    width: 80vw;
+  }
+
+  .container,
+  button,
+  input::placeholder {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    margin-bottom: 5vw;
+    border-radius: 2vw;
+  }
+
+  .container p {
+    margin-left: 3vw;
+  }
+
+  .container input[type="text"] {
+    width: 100vw;
+    margin-left: 3vw;
+  }
+
+  #addToDo button {
+    width: 20px;
+    height: 14px;
+    border-radius: 150vw;
+  }
+
+  #counter,
+  #clear {
+    display: none;
+  }
+
+  .list-footer,
+  .status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .status button {
+    margin: 0 4vw;
+  }
+}
