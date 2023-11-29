@@ -23,7 +23,7 @@ html {
 
 body {
     background-color: var(--bgcolor);
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header {

@@ -78,10 +78,19 @@ function listarToDo(arr) {
   counter.innerHTML = `${itemsWithStatus1.length} items left`;
 
   divList.appendChild(divListFooter)
+
+  document.getElementById('clear').addEventListener('click', e => {
+    e.preventDefault()
+    
+    fetch(uri + "/", { method: "DELETE" })
+    .then((resp) => resp.status)
+    .then((resp) => window.location.reload())
+  })
 }
 
 function alterarStatus(i) {
-  fetch(uri + "/" + i, { method: "PUT" }).then((resp) => resp.status)
+  fetch(uri + "/" + i, { method: "PUT" })
+  .then((resp) => resp.status)
   .then((resp) => {
     if (resp == 201) window.location.reload()
     else alert("404")
