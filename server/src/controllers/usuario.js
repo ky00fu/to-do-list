@@ -1,13 +1,14 @@
 const con = require('../dao/connect')
-const Usuario = require('../models/todo')
+const Usuario = require('../models/usuario')
 
 const teste = (req, res) => {
     res.json("Funcionando").end()
 }
 
 const criar = (req, res) => {
-    let todo = new ToDo(req.body)
-    con.query(todo.create(), (err, result) => {
+    let usuario = new Usuario(req.body)
+
+    con.query(usuario.create(), (err, result) => {
         if (err == null)
             res.status(201).end()
         else
@@ -15,21 +16,28 @@ const criar = (req, res) => {
     })
 }
 
-const listar = (req, res) => {
-    let todo = new ToDo(req.params)
-    con.query(todo.read(), (err, result) => {
-        if (err == null)
-            res.json(result).end()
+const logar = (req, res) => {
+    let usuario = new Usuario(req.body)
+
+    con.query(usuario.entrar(), (err, result) => {
+        if (err == null) {
+            if (result.length > 0) {
+                res.status(202).json(result).end()
+            } else {
+                res.status(404).json(result).end()
+            }
+        } else {
+            res.status(500).json("Banco de dados não respondeu").end()
+        }
     })
 }
 
-const alterar = (req, res) => {
-    let todo = new ToDo(req.params)
-    con.query(todo.update(), (err, result) => {
-        if (result.affectedRows > 0)
-            res.status(201).end()
-        else
-            res.status(500).end()
+const listar = (req, res) => {
+    let usuario = new Usuario(req.params)
+    
+    con.query(usuario.read(), (err, result) => {
+        if (err == null)
+            res.json(result).end()
     })
 }
 
@@ -37,5 +45,5 @@ module.exports = {
     teste,
     criar,
     listar,
-    alterar
+    logar
 }
