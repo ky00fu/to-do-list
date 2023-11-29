@@ -24,7 +24,7 @@ acesso.addEventListener("submit", function (e) {
         msgDiv.offsetWidth;
         msgDiv.classList.remove("show");
 
-        mensagem.innerHTML = "E-mail ou senha incorreta";
+        mensagem.innerHTML = "Usuário não encontrado";
 
         msgDiv.offsetWidth;
         msgDiv.classList.add("show");
