@@ -2,11 +2,11 @@
 
 ## Instruções
 
-Necessário ter instalado:
-- [VSCode](https://code.visualstudio.com/download)
-- [Node.js](https://nodejs.org/en/download)
-- [XAMPP Control Panel](https://www.apachefriends.org/download.html)
-- Extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VSCode
+Requisitos:
+- [x] [VSCode](https://code.visualstudio.com/download)
+- [x] [Node.js](https://nodejs.org/en/download)
+- [x] [XAMPP Control Panel](https://www.apachefriends.org/download.html)
+- [x] Extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VSCode
 
     > Hiperlinks redirecionam para as páginas de download
 
@@ -14,22 +14,22 @@ Necessário ter instalado:
 
 - Copia o link do repositório
 
-![](assets/git-clone.gif)
+    ![](assets/git-clone.gif)
 
 
 - Clica no botão ao lado do link pra copiá-lo
 - No VSCode, aperta as teclas `CTRL + SHIFT + P`
 - Digita
 
-```
-git clone
-```
+
+        git clone
+
 
 - Seleciona `Git: Clone`
 - Cola o link do repositório
 - `Enter`
 
-![](assets/vscode-git-clone.gif)
+    ![](assets/vscode-git-clone.gif)
 
 - Escolha um local para clonar o repositório
 
@@ -38,24 +38,24 @@ git clone
 - Clica em **Start** no Apache e MySQL
 - Clica em **Admin** no MySQL
 
-![](assets/xampp-start.gif)
+    ![](assets/xampp-start.gif)
 
 - No VSCode, abra a pasta **./server/sql**
 - Abra o arquivo **script.sql**
 - Copia o script
 
-![](assets/copiar-script.gif)
+    ![](assets/copiar-script.gif)
 
 - No phpMyAdmin, clica em **SQL**
 - Cola o script no campo em branco
 - Aperta `CTRL + ENTER`
 
-![](assets/colar-script.gif)
+    ![](assets/colar-script.gif)
 
 - No VSCode, clica com o botão direito na pasta **server**
 - Clica em **Open in Integrated Terminal**
 
-![](assets/open-terminal.gif)
+    ![](assets/open-terminal.gif)
 
 Quando o Terminal abrir
 - Para instalar as dependências do projeto, digite
@@ -83,7 +83,7 @@ Para ver o projeto em funcionamento
 - Clica com o botão direito no arquivo **index.html**
 - **Open with Live Server**
 
-![](assets/open-live-server.gif)
+    ![](assets/open-live-server.gif)
 
 
 #
