@@ -33,7 +33,7 @@ git clone
 
 - Escolha um local para clonar o repositório
 
-### Inicializar o projeto
+### Inicializar o Backend
 - Abre o **XAMPP Control Panel**
 - Clica em **Start** no Apache e MySQL
 - Clica em **Admin** no MySQL
