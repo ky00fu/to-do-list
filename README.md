@@ -21,9 +21,7 @@ Requisitos:
 - No VSCode, aperta as teclas `CTRL + SHIFT + P`
 - Digita
 
-
         git clone
-
 
 - Seleciona `Git: Clone`
 - Cola o link do repositório
@@ -60,22 +58,16 @@ Requisitos:
 Quando o Terminal abrir
 - Para instalar as dependências do projeto, digite
 
-```
-npm i
-```
-
+        npm i
+        
 - Para instalar o nodemon, digite
 
-```
-npm i nodemon
-```
-
+        npm i nodemon
+        
 - Para rodar o Backend, digite 
 
-```
-nodemon
-```
-
+        nodemon
+        
 ## Abrir o projeto
 
 Para ver o projeto em funcionamento
