@@ -14,7 +14,7 @@ Necessário ter instalado:
 
 - Copia o link do repositório
 
-![](md-assets/git-clone.gif)
+![](assets/git-clone.gif)
 
 
 - Clica no botão ao lado do link pra copiá-lo
@@ -29,7 +29,7 @@ git clone
 - Cola o link do repositório
 - `Enter`
 
-![](md-assets/vscode-git-clone.gif)
+![](assets/vscode-git-clone.gif)
 
 - Escolha um local para clonar o repositório
 
@@ -38,24 +38,24 @@ git clone
 - Clica em **Start** no Apache e MySQL
 - Clica em **Admin** no MySQL
 
-![](md-assets/xampp-start.gif)
+![](assets/xampp-start.gif)
 
 - No VSCode, abra a pasta **./server/sql**
 - Abra o arquivo **script.sql**
 - Copia o script
 
-![](md-assets/copiar-script.gif)
+![](assets/copiar-script.gif)
 
 - No phpMyAdmin, clica em **SQL**
 - Cola o script no campo em branco
 - Aperta `CTRL + ENTER`
 
-![](md-assets/colar-script.gif)
+![](assets/colar-script.gif)
 
 - No VSCode, clica com o botão direito na pasta **server**
 - Clica em **Open in Integrated Terminal**
 
-![](md-assets/open-terminal.gif)
+![](assets/open-terminal.gif)
 
 Quando o Terminal abrir
 - Para instalar as dependências do projeto, digite
@@ -83,7 +83,7 @@ Para ver o projeto em funcionamento
 - Clica com o botão direito no arquivo **index.html**
 - **Open with Live Server**
 
-![](md-assets/open-live-server.gif)
+![](assets/open-live-server.gif)
 
 
 #
