@@ -8,7 +8,7 @@ Necessário ter instalado:
 - [XAMPP Control Panel](https://www.apachefriends.org/download.html)
 - Extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) no VSCode
 
-> Hiperlinks redirecionam para as páginas de download
+    > Hiperlinks redirecionam para as páginas de download
 
 ### Clonar Repositório
 
